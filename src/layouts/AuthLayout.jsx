@@ -1,15 +1,13 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Header/Navbar';
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Header/Navbar";
 
 const AuthLayout = () => {
-    return (
-        <div className='bg-base-200 min-h-screen'>
-            <div className='max-w-7xl mx-auto px-4 md:px-8'>
-                <Navbar></Navbar>
-                <Outlet></Outlet>
-            </div>
-        </div>
-    );
+  return (
+    <div className="max-w-7xl mx-auto px-2 sm:px-4">
+      <Navbar />
+      <Outlet />
+    </div>
+  );
 };
 
 export default AuthLayout;
