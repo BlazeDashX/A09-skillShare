@@ -1,0 +1,16 @@
+[
+  {
+    "imgSrc": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    "badgeText": "Knowledge Economy",
+    "slideTitle": "Barter Your Skills, Grow Your Value",
+    "slideDescription": "Connect with peer developers across global coordinates to exchange advanced programming capabilities without spending capitals.",
+    "slideCTA": "Browse Open Sessions"
+  },
+  {
+    "imgSrc": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    "badgeText": "Community Hub",
+    "slideTitle": "Live 1-on-1 Engineering Rooms",
+    "slideDescription": "Skip theoretical tutorials. Gain deep contextual programming insights through targeted, synchronous problem solving consultations.",
+    "slideCTA": "Explore Frameworks"
+  }
+]

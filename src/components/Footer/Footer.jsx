@@ -63,7 +63,7 @@ const Footer = () => {
       </div>
 
       {/* Underbar Copyright Bar */}
-      <div className="footer footer-center p-4 bg-base-300 text-base-content/70 text-xs font-semibold border-t border-neutral-800">
+      <div className="footer footer-center p-4 bg-[#C4C4C4]  font-semibold border-t border-neutral-800">
         <aside>
           <p>Copyright © {new Date().getFullYear()} - All rights reserved by SkillSwap Industries Ltd.</p>
         </aside>

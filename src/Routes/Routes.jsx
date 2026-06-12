@@ -8,7 +8,6 @@ import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
 import PrivateRoute from "./PrivateRoute";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +25,11 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      // Move it here so it inherits MainLayout's sizing and structure
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
     ],
   },
   {
@@ -41,9 +45,5 @@ export const router = createBrowserRouter([
         element: <Register />,
       },
     ],
-  },
-  {
-    path: "*",
-    element: <ErrorPage />,
   },
 ]);
