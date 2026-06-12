@@ -1,6 +1,7 @@
 import  { useState } from "react";
 import HeroSlider from "../components/Home/HeroSlider";
 import PopularSkills from "../components/Home/PopularSkills";
+import TopProvider from "../components/Home/TopProvider";
 
 
 const Home = () => {
@@ -12,7 +13,8 @@ const Home = () => {
       <HeroSlider activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
 
       <PopularSkills />
-      
+
+      <TopProvider />
     </div>
   );
 };

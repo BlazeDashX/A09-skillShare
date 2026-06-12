@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 const PopularSkillCard = ({ skills, loading }) => {
     if (loading) {
-        return <div className="text-center py-10"><span class="loading loading-spinner text-success"></span></div>;
+        return <div className="text-center py-10">
+                    <span className="loading loading-spinner text-success"></span>
+                </div>;
     }
 
     return (
