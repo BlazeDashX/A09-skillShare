@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Docker & Kubernetes Containerization",
+    "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=600&auto=format&fit=crop",
+    "rating": 4.9,
+    "price": 55,
+    "category": "DevOps",
+    "description": "Learn to containerize microservices, manage local clusters, and configure automated horizontal scaling rules for high-traffic architectures.",
+    "providerName": "Zayan Ahmed",
+    "providerEmail": "zayan@skillswap.com",
+    "duration": "2 hours"
+  },
+  {
+    "id": 2,
+    "name": "TypeScript Enterprise Design Patterns",
+    "image": "https://images.unsplash.com/photo-1516116211223-5c359a36298a?q=80&w=600&auto=format&fit=crop",
+    "rating": 4.8,
+    "price": 40,
+    "category": "Frontend",
+    "description": "Deep dive into advanced generic typing, utility decorators, conditional mapping types, and clean architectural patterns for large-scale web codebases.",
+    "providerName": "Sariha Kabir",
+    "providerEmail": "sariha@skillswap.com",
+    "duration": "1.5 hours"
+  },
+  {
+    "id": 3,
+    "name": "PostgreSQL Database Performance Tuning",
+    "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=600&auto=format&fit=crop",
+    "rating": 4.7,
+    "price": 48,
+    "category": "Database",
+    "description": "Master index optimizations, query execution plan audits, connection pooling strategies, and structural normalization to clear system bottlenecks.",
+    "providerName": "Asif Nawaz",
+    "providerEmail": "asif@skillswap.com",
+    "duration": "2.5 hours"
+  },
+  {
+    "id": 4,
+    "name": "GraphQL API Federated Architecture",
+    "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2079?q=80&w=600&auto=format&fit=crop",
+    "rating": 4.9,
+    "price": 60,
+    "category": "Backend",
+    "description": "Build high-speed data graphs using schema stitching, context isolation, complex resolvers, and preventative depth-limiting query validation rules.",
+    "providerName": "Mariam Begum",
+    "providerEmail": "mariam@skillswap.com",
+    "duration": "2 hours"
+  },
+  {
+    "id": 5,
+    "name": "Cyber Security & Web Pen-Testing",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop",
+    "rating": 4.6,
+    "price": 50,
+    "category": "Security",
+    "description": "Audit cross-site scripting risks, parameter tampering vulnerabilities, security token configurations, and establish secure modern validation guards.",
+    "providerName": "Fahim Chowdhury",
+    "providerEmail": "fahim@skillswap.com",
+    "duration": "3 hours"
+  },
+  {
+    "id": 6,
+    "name": "Product Management for Software Lead Engineers",
+    "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=600&auto=format&fit=crop",
+    "rating": 4.8,
+    "price": 35,
+    "category": "Management",
+    "description": "Bridge engineering and business strategies. Learn to write effective feature tracking metrics, prioritize sprint cards, and handle complex feature roadmaps.",
+    "providerName": "Nuren Khan",
+    "providerEmail": "nuren@skillswap.com",
+    "duration": "1 hour"
+  }
+]
