@@ -2,6 +2,7 @@ import  { useState } from "react";
 import HeroSlider from "../components/Home/HeroSlider";
 import PopularSkills from "../components/Home/PopularSkills";
 import TopProvider from "../components/Home/TopProvider";
+import HowItWorks from "../components/Home/HowItWorks";
 
 
 const Home = () => {
@@ -15,6 +16,8 @@ const Home = () => {
       <PopularSkills />
 
       <TopProvider />
+
+      <HowItWorks />
     </div>
   );
 };
