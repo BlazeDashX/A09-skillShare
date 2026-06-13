@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
 import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
+import SkillDetails from "../pages/SkillDetails";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -25,7 +26,13 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // Move it here so it inherits MainLayout's sizing and structure
+      {
+        path: "/skill/:id",
+        element: (
+          <SkillDetails />
+        ),
+      },
+
       {
         path: "*",
         element: <ErrorPage />,

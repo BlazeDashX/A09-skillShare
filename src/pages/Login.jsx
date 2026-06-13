@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -27,12 +27,23 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         setUser(result.user);
-        toast.success("Welcome back!");
+
+        toast.success("Welcome back!", {
+          position: "top-center",
+          autoClose: 3000,
+          theme: "dark",
+        });
+
         navigate(from, { replace: true });
       })
       .catch((err) => {
         setError("Invalid credentials. Double check your inputs.");
-        toast.error(err.code);
+
+        toast.error(err.code, {
+          position: "top-center",
+          autoClose: 3000,
+          theme: "dark",
+        });
       });
   };
 
@@ -40,11 +51,21 @@ const Login = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         setUser(result.user);
-        toast.success("Logged in successfully!");
+
+        toast.success("Logged in successfully!", {
+          position: "top-center",
+          autoClose: 3000,
+          theme: "dark",
+        });
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        toast.error(error.message);
+        toast.error(error.message, {
+          position: "top-center",
+          autoClose: 3000,
+          theme: "dark",
+        });
       });
   };
 
@@ -56,79 +77,102 @@ const Login = () => {
   return (
     <div className="hero bg-base-200 min-h-[85vh] rounded-2xl my-4 px-4">
       <div className="hero-content flex-col lg:flex-row-reverse gap-12 max-w-5xl w-full justify-center items-center">
+        
         <div className="text-center lg:text-left lg:max-w-md">
           <h1 className="text-5xl font-black leading-tight text-base-content">
             Access <span className="text-primary">SkillSwap</span>
           </h1>
           <p className="py-6 text-base-content/70 font-medium">
-            Log back in to manage your current booking records, communicate with session providers, or update your profile.
+            Log back in to manage your booking records and profile.
           </p>
         </div>
-        
-        {/* Uniform Size Card Container */}
+
+        {/* Login Card */}
         <div className="card bg-base-100 w-full max-w-md min-h-145 shrink-0 shadow-2xl border border-base-200 flex flex-col">
           <form onSubmit={handleLogin} className="card-body p-6 w-full flex flex-col justify-between grow">
-            
-            {/* Top Section: Inputs */}
+
             <div>
-              <h2 className="text-2xl font-bold text-center text-base-content mb-6">Login Account</h2>
-              
+              <h2 className="text-2xl font-bold text-center text-base-content mb-6">
+                Login Account
+              </h2>
+
               <div className="mb-4 w-full">
-                <label className="block text-sm font-semibold mb-2 text-base-content/80">Email Address</label>
-                <input 
+                <label className="block text-sm font-semibold mb-2 text-base-content/80">
+                  Email Address
+                </label>
+                <input
                   ref={emailInputRef}
-                  name="email" 
-                  type="email" 
-                  className="input input-bordered w-full" 
-                  placeholder="name@example.com" 
-                  required 
+                  name="email"
+                  type="email"
+                  className="input input-bordered w-full"
+                  placeholder="name@example.com"
+                  required
                 />
               </div>
 
               <div className="mb-2 w-full">
-                <label className="block text-sm font-semibold mb-2 text-base-content/80">Password</label>
+                <label className="block text-sm font-semibold mb-2 text-base-content/80">
+                  Password
+                </label>
+
                 <div className="relative w-full">
-                  <input 
-                    name="password" 
-                    type={showPassword ? "text" : "password"} 
-                    className="input input-bordered w-full pr-14" 
-                    placeholder="••••••••" 
-                    required 
+                  <input
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    className="input input-bordered w-full pr-14"
+                    placeholder="••••••••"
+                    required
                   />
-                  <button 
-                    type="button" 
+
+                  <button
+                    type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-base-content/50 hover:text-primary transition z-10"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-base-content/50 hover:text-primary"
                   >
                     {showPassword ? "HIDE" : "SHOW"}
                   </button>
                 </div>
+
                 <div className="text-right mt-2">
-                  <button 
-                    type="button" 
-                    onClick={handleForgotPasswordRedirect} 
+                  <button
+                    type="button"
+                    onClick={handleForgotPasswordRedirect}
                     className="text-xs link link-hover text-secondary font-semibold"
                   >
                     Forgot password?
                   </button>
                 </div>
-                {error && <p className="text-error text-xs font-semibold mt-2">{error}</p>}
+
+                {error && (
+                  <p className="text-error text-xs font-semibold mt-2">
+                    {error}
+                  </p>
+                )}
               </div>
             </div>
 
-            {/* Bottom Section: Actions Anchored to Bottom */}
             <div>
-              <button type="submit" className="btn btn-primary w-full shadow-lg mt-2">Login</button>
-              
-              <div className="divider text-xs text-base-content/40 font-bold uppercase my-3">Or</div>
-              
-              <button type="button" onClick={handleGoogleSignIn} className="btn btn-outline btn-secondary w-full">
+              <button type="submit" className="btn btn-primary w-full shadow-lg mt-2">
+                Login
+              </button>
+
+              <div className="divider text-xs text-base-content/40 font-bold uppercase my-3">
+                Or
+              </div>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                className="btn btn-outline btn-secondary w-full"
+              >
                 Continue with Google
               </button>
 
               <p className="font-semibold text-center pt-4 text-sm text-base-content/70">
                 Don't have an account?{" "}
-                <Link className="text-secondary link link-hover font-bold" to="/auth/register">Register</Link>
+                <Link className="text-secondary link link-hover font-bold" to="/auth/register">
+                  Register
+                </Link>
               </p>
             </div>
 

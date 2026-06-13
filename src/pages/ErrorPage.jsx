@@ -1,43 +1,45 @@
 import { Link } from "react-router-dom";
-import PNF404 from "../assets/page-Not-Found-404.svg";
+import PNF404 from "../assets/Error-404.svg";
 
 const ErrorPage = () => {
-    return (
-        <div className="w-full flex flex-col items-center justify-center bg-base-100 px-4 md:px-8">
-            <div className="text-center max-w-xl mx-auto flex flex-col items-center">
-                <div className=" flex justify-between items-center">
-                    <div className="w-full max-w-[320px] sm:max-w-100 md:max-w- mt-10 ">
-                        <img
-                            src={PNF404}
-                            alt="Page Not Found"
-                            className="w-full h-auto object-contain"
-                        />
-                    </div>
+  return (
+    <div className="flex items-center justify-center">
+          <div className="w-full flex flex-col bg-base-100 px-4 md:px-8 py-8 md:py-12 rounded-lg shadow-lg">
+      <div className="text-center max-w-4xl mx-auto flex flex-col items-center gap-6">
+        
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+          <div className="w-full max-w-65 sm:max-w-[320px] md:max-w-105">
+            <img
+              src={PNF404}
+              alt="Page Not Found"
+              className="w-full h-auto object-contain animate-pulse"
+              style={{ animationDuration: "4s" }}
+            />
+          </div>
 
-                    {/* Text Content */}
-                    <div>
-                        <h1 className="text-3xl md:text-4xl font-bold mt-8 text-base-content">
-                        Oops! Page not found.
-                    </h1>
-                    <p className="text-base-content/60 mt-3 text-sm md:text-base max-w-md">
-                        The page you are looking for doesn't exist, has been removed, or the URL might be incorrect.
-                    </p>
-                    </div>
-                </div>
-
-
-                <div className="mt-8">
-                    <Link
-                        to="/"
-                        className="btn btn-primary px-6 text-base tracking-wide shadow-md hover:shadow-lg transition-all duration-200"
-                    >
-                        Back to Home
-                    </Link>
-                </div>
-
-            </div>
+          <div className="text-center md:text-left space-y-3 max-w-md">
+            <h1 className="text-3xl md:text-4xl font-black text-base-content leading-tight">
+              Oops! Page not found.
+            </h1>
+            <p className="text-base-content/60 text-sm md:text-base font-medium leading-relaxed">
+              The page you are looking for doesn't exist, has been removed, or the URL might be incorrect. Let's get you back to safety!
+            </p>
+          </div>
         </div>
-    );
+
+        <div className="mt-4">
+          <Link
+            to="/"
+            className="btn btn-primary px-8 text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/20 hover:scale-105 transition-all duration-200"
+          >
+            Back to Home
+          </Link>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  );
 };
 
 export default ErrorPage;

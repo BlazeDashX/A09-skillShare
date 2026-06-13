@@ -10,15 +10,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-// Single file export for both Context and Provider
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  console.log("Auth State:", { loading, user });
 
   const createUser = (email, password) => {
     setLoading(true);
