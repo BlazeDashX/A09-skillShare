@@ -3,11 +3,12 @@ import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import ErrorPage from "../pages/ErrorPage";
+import ErrorPage from "../pages/ErrorPage"; // Or your new NotFound component!
 import MyProfile from "../pages/MyProfile";
 import Home from "../pages/Home";
 import SkillDetails from "../pages/SkillDetails";
 import PrivateRoute from "./PrivateRoute";
+import AllSkills from "../pages/AllSkills"; 
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/skills",
+        element: <AllSkills />,
       },
       {
         path: "/my-profile",
@@ -29,13 +34,13 @@ export const router = createBrowserRouter([
       {
         path: "/skill/:id",
         element: (
-          <SkillDetails />
+          <PrivateRoute><SkillDetails /></PrivateRoute>
+              
         ),
       },
-
       {
         path: "*",
-        element: <ErrorPage />,
+        element: <ErrorPage />, 
       },
     ],
   },

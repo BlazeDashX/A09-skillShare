@@ -19,7 +19,8 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li><NavLink to="/" className={({ isActive }) => isActive ? "text-primary font-bold" : ""}>Home</NavLink></li>
-      <li><NavLink to="/apps" className={({ isActive }) => isActive ? "text-primary font-bold" : ""}>Skills</NavLink></li>
+      {/* 🔥 FIX: Changed /apps to /skills */}
+      <li><NavLink to="/skills" className={({ isActive }) => isActive ? "text-primary font-bold" : ""}>Skills</NavLink></li>
       {user && (
         <>
           <li><NavLink to="/my-profile" className={({ isActive }) => isActive ? "text-primary font-bold" : ""}>My Profile</NavLink></li>
